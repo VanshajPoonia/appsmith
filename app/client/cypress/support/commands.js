@@ -2776,6 +2776,8 @@ Cypress.Commands.add("startServerAndRoutes", () => {
   cy.route("DELETE", "/api/v1/collections/actions/*").as(
     "deleteJSCollection",
   );
+
+  cy.intercept("GET", "/api/v1/admin/env").as("getEnvVariables");
 });
 
 Cypress.Commands.add("alertValidate", (text) => {
